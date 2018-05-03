@@ -303,6 +303,11 @@ class App extends Component {
           </Col>
           <Col span={4} />
         </Row>
+        <Row>
+
+            <a href="https://github.com/xfangfang/dataSafety/blob/master/algorithm.js">源码</a>
+
+        </Row>
         </div>
     );
   }
