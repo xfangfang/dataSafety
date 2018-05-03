@@ -22,7 +22,7 @@ class App extends Component {
       }
   }
 
-  vigeneer(strin,key,encode){
+  vigenere(strin,key,encode){
       let input=strin.replace(/\s/g, "").toUpperCase()
       let password = key.replace(/\s/g, "").toUpperCase()
       let A = 65
@@ -176,7 +176,7 @@ class App extends Component {
       var ans = ""
       switch (this.state.type) {
           case "1":
-            ans = this.vigeneer(this.state.intext,this.state.key,true)
+            ans = this.vigenere(this.state.intext,this.state.key,true)
               break;
           case "2":
             ans = this.twoPath(this.state.intext,this.state.key,true)
@@ -195,7 +195,7 @@ class App extends Component {
       var ans = ""
       switch (this.state.type) {
           case "1":
-            ans = this.vigeneer(this.state.outtext,this.state.key,false)
+            ans = this.vigenere(this.state.outtext,this.state.key,false)
               break;
           case "2":
             ans = this.twoPath(this.state.outtext,this.state.key,false)
@@ -234,7 +234,7 @@ class App extends Component {
         </header>
         <Row  >
           <Col span={4} />
-          <Col span={16} align={"bottom"} >
+          <Col span={16}>
                 <Row type={"flex"} align={"middle"} >
                     <Col span={11}>
                         <TextArea
@@ -255,7 +255,7 @@ class App extends Component {
                         style={{ width: 120 }}
                         onChange={this.handleChange}>
 
-                        <Option value="1">Vigeneer</Option>
+                        <Option value="1">vigenere</Option>
                         <Option value="2">双轨</Option>
                         <Option value="3">钥控</Option>
                       </Select>
@@ -303,11 +303,18 @@ class App extends Component {
           </Col>
           <Col span={4} />
         </Row>
-        <Row>
+        <Row type={"flex"} justify={"center"} style={{ margin: '24px 0' }}>
 
-            <a href="https://github.com/xfangfang/dataSafety/blob/master/algorithm.js">源码</a>
+            <Col span={4} >
+                <a href="https://github.com/xfangfang/dataSafety/blob/master/algorithm.js">源码</a>
+            </Col>
+            <Col span={2} />
+            <Col span={4} >
+                <a href="https://xfangfang.github.io/dataSafety/">说明</a>
+            </Col>
 
         </Row>
+
         </div>
     );
   }
